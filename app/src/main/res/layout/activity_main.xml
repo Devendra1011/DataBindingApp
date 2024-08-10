@@ -8,6 +8,10 @@
         <variable
             name="person"
             type="com.example.databindingapp.Person" />
+
+        <variable
+            name="clickHandler"
+            type="com.example.databindingapp.MyClickHandler" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -34,5 +38,15 @@
             android:text="@{person.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickHandler::onButtonClicked}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Click Me!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="166dp"
+            app:layout_constraintStart_toStartOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
