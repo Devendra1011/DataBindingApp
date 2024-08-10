@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding activityMainBinding;
 
+    private MyClickHandler myClickHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         activityMainBinding.setPerson(p1);
+
+        myClickHandler = new MyClickHandler(this);
+        activityMainBinding.setClickHandler(myClickHandler);
 
 
     }
